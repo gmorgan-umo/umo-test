@@ -1,0 +1,33 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "umo-test",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-03-29",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": "./dist",
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "umo-test","database_id": "86d752a2-1e6a-4e4c-b719-32c461a58161",
+			// Run `wrangler d1 create my-emdash-site` and paste the ID here
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "my-emdash-media","preview_bucket_name": "my-emdash-media",
+		},
+	],
+	"observability": {
+		"enabled": true,
+	},
+	"worker_loaders": [
+		{
+			"binding": "LOADER",
+		},
+	],
+}
